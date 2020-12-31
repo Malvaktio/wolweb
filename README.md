@@ -114,13 +114,13 @@ docker cp wolweb:/wolweb - > wolweb.gz
 ## Build on Windows
 I use VS Code with Go extension. To build this project on windows
 ```
-go build -o wolweb.exe .
+go build -o wolweb.exe src
 ```
 
 ## Build for ASUS Routers (ARM v5)
 I initially thought of running this application on my router, so I needed to build the application without having to install build tool on my router. I use the following **PowerShell** one liner to build targeting the ARM v5 platform on my Windows machine with VS Code:
 ```powershell
- $Env:GOOS = "linux"; $Env:GOARCH = "arm"; $Env:GOARM = "5"; go build -o wolweb .
+ $Env:GOOS = "linux"; $Env:GOARCH = "arm"; $Env:GOARM = "5"; go build -o wolweb src
 ```
 Copy the file over to router and make it executable.
 ```sh
