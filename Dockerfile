@@ -10,7 +10,9 @@ WORKDIR /wolweb
 
 
 # Install Dependecies
-RUN go get -d github.com/gorilla/handlers && \
+RUN apk update && apk upgrade && \
+    apk add --no-cache git && \
+    go get -d github.com/gorilla/handlers && \
     go get -d github.com/gorilla/mux && \
     go get -d github.com/ilyakaznacheev/cleanenv
 
