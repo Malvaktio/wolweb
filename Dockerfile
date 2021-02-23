@@ -8,14 +8,6 @@ COPY src /wolweb
 WORKDIR /wolweb
 
 
-
-# Install Dependecies
-RUN apk update && apk upgrade && \
-    apk add --no-cache git && \
-    go get -d github.com/gorilla/handlers && \
-    go get -d github.com/gorilla/mux && \
-    go get -d github.com/ilyakaznacheev/cleanenv
-
 # Build Source Files
 RUN go build -o wolweb . 
 
